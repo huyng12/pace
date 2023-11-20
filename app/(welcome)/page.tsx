@@ -1,21 +1,19 @@
-import Link from "next/link";
-
 import { getCachedUsers } from "@/lib/user/services";
+import { AvatarLink } from "@/components/welcome/AvatarLink";
 
 async function Home() {
   const users = await getCachedUsers();
 
   return (
-    <main>
-      <p>Who are you?</p>
-      <div>
+    // TODO: Fix padding-top to another number that makes more sense
+    <div className="inset-x-1/2 mx-auto w-[250px] pt-[200px]">
+      <p className="mb-4 text-2xl font-medium">Who are you?</p>
+      <div className="flex justify-between">
         {users.map((user) => (
-          <Link key={user.id} href={`/u/${user.username}`}>
-            <button>{user.name}</button>
-          </Link>
+          <AvatarLink key={user.id} user={user} width={100} height={100} />
         ))}
       </div>
-    </main>
+    </div>
   );
 }
 
