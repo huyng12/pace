@@ -1,5 +1,7 @@
 "use client";
 
+import { useCallback } from "react";
+
 import { stopActivityLog } from "@/lib/activity-log/services";
 
 import { StopSolid } from "../icons/StopSolid";
@@ -9,9 +11,9 @@ interface StopActivityProps {
 }
 
 function StopActivity({ activityLogId }: StopActivityProps) {
-  async function handleStopActivityLog() {
+  const handleStopActivityLog = useCallback(() => {
     stopActivityLog({ activityLogId });
-  }
+  }, [activityLogId]);
 
   return (
     <button

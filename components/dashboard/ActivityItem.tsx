@@ -53,7 +53,7 @@ function ActivityItem({ activity }: ActivityItemProps) {
 
   const handleStartActivity = useCallback(() => {
     startActivity({ activityId: activity.id });
-  }, []);
+  }, [activity.id]);
 
   return (
     <div
