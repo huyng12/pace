@@ -1,0 +1,19 @@
+"use client";
+
+import clsx from "clsx";
+
+interface GreetingProps {
+  name: string;
+  className?: string;
+}
+
+function Greeting({ name, className }: GreetingProps) {
+  return (
+    <div className={clsx("text-2xl font-medium", className)}>
+      <p>Hi {name},</p>
+      <p>Let's see your progress...</p>
+    </div>
+  );
+}
+
+export { Greeting };

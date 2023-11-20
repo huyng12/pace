@@ -1,0 +1,44 @@
+datasource db {
+  provider  = "postgresql"
+  directUrl = env("DATABASE_URL")
+  url       = env("DATABASE_POOL_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id         String     @id @default(cuid())
+  username   String     @unique
+  name       String
+  avatarUrl  String?
+  activities Activity[]
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  @@index([username]) // to find user with username
+}
+
+model Activity {
+  id           String        @id @default(cuid())
+  title        String
+  maxDuration  Int // in minutes
+  deletedAt    DateTime?
+  author       User          @relation(fields: [authorId], references: [id])
+  authorId     String
+  activityLogs ActivityLog[]
+
+  @@index([deletedAt]) // to filter deleted activities
+}
+
+model ActivityLog {
+  id         String    @id @default(cuid())
+  startedAt  DateTime  @default(now())
+  endedAt    DateTime?
+  activity   Activity  @relation(fields: [activityId], references: [id])
+  activityId String
+
+  @@index([endedAt]) // to find work-in-progress activity log (endedAt is null)
+  @@index([startedAt]) // to find today's activity log
+}
