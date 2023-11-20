@@ -11,7 +11,7 @@ function Greeting({ name, className }: GreetingProps) {
   return (
     <div className={clsx("text-2xl font-medium", className)}>
       <p>Hi {name},</p>
-      <p>Let's see your progress...</p>
+      <p>Let&apos;s see your progress...</p>
     </div>
   );
 }

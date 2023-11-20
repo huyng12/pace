@@ -22,7 +22,7 @@ function StopWatch({ startedAt, className }: StopWatchProps) {
     const updateDuration = () => setDuration(durationUntilNow(startedAt));
     const id = window.setInterval(updateDuration, 1000);
     return () => window.clearInterval(id);
-  }, []);
+  }, [startedAt]);
 
   return (
     <p className={className} suppressHydrationWarning>
