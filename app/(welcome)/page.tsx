@@ -1,5 +1,11 @@
+import { Metadata } from "next";
+
 import { getCachedUsers } from "@/lib/user/services";
 import { AvatarLink } from "@/components/welcome/AvatarLink";
+
+export const metadata: Metadata = {
+  title: "Welcome",
+};
 
 async function Home() {
   const users = await getCachedUsers();

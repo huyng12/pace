@@ -1,13 +1,30 @@
 import "@/styles/globals.css";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
 import { fontSans } from "@/lib/fonts";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "PACE",
-  description: "Our progress, our wins",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  // TODO: Design and insert icons here
+  // icons: {
+  //   icon: "/favicon.ico",
+  //   shortcut: "/favicon-16x16.png",
+  //   apple: "/apple-touch-icon.png",
+  // },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "light" },
+    { media: "(prefers-color-scheme: dark)", color: "dark" },
+  ],
 };
 
 interface RootLayoutProps {
