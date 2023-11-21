@@ -27,20 +27,24 @@ function TopNavigation(_props: TopNavigationProps) {
   }
 
   return (
-    <div className="fixed inset-x-0 top-0 z-10">
-      <div className="flex items-end px-4 pt-4">
+    <header className="fixed inset-x-0 top-0 z-10">
+      <div className="flex items-end px-4 pb-2 pt-4">
         {/* Font have a padding bottom itself, that's why leading-none is not enough */}
         {/* TODO: Migrate to another font */}
         <p className="mb-[-2px] grow text-2xl font-medium leading-none">
           {config.title}
         </p>
-        <div className="contents">
-          <Link href="/settings">
-            <SettingSolid className="text-2xl" />
-          </Link>
-        </div>
+        <nav className="contents">
+          <ul role="list" className="contents">
+            <li>
+              <Link href="/settings">
+                <SettingSolid className="text-2xl" />
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
+    </header>
   );
 }
 
