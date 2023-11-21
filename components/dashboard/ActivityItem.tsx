@@ -25,6 +25,8 @@ interface FormattedActivity {
 }
 
 function formatActivity(activity: ExtendedActivity): FormattedActivity {
+  const maxDuration = activity.maxDuration * 60;
+
   const totalDuration = activity.activityLogs.reduce(
     (total, log) =>
       total + diffInSeconds(new Date(log.startedAt), new Date(log.endedAt!)),
@@ -34,15 +36,15 @@ function formatActivity(activity: ExtendedActivity): FormattedActivity {
   return {
     title: activity.title,
     maxDuration: {
-      value: activity.maxDuration,
-      text: formatDuration(activity.maxDuration),
+      value: maxDuration,
+      text: formatDuration(maxDuration),
     },
     totalDuration: {
       value: totalDuration,
       text: formatDuration(totalDuration),
     },
     progressPercent: Math.max(
-      Math.min(totalDuration / activity.maxDuration, 100),
+      Math.min((totalDuration / maxDuration) * 100, 100),
       3, // which is the minimum percent that the progress bar can display well
     ),
   };
