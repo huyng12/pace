@@ -28,7 +28,7 @@ function TopNavigation(_props: TopNavigationProps) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-10">
-      <div className="flex items-end px-4 pb-2 pt-4">
+      <div className="flex items-end bg-white bg-opacity-30 px-4 pb-2 pt-4 backdrop-blur-md">
         {/* Font have a padding bottom itself, that's why leading-none is not enough */}
         {/* TODO: Migrate to another font */}
         <p className="mb-[-2px] grow text-2xl font-medium leading-none">
