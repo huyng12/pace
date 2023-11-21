@@ -1,5 +1,3 @@
-"use client";
-
 import { IconProps } from "./type";
 
 export function PlaySolid({ className }: IconProps) {
