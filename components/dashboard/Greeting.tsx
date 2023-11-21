@@ -7,7 +7,7 @@ interface GreetingProps {
 
 function Greeting({ name, className }: GreetingProps) {
   return (
-    <div className={clsx("text-2xl font-medium", className)}>
+    <div className={clsx("text-xl font-medium", className)}>
       <p>Hi {name},</p>
       <p>Let&apos;s see your progress...</p>
     </div>

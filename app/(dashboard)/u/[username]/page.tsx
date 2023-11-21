@@ -34,7 +34,7 @@ async function Dashboard({ params }: DashboardProps) {
   }
 
   return (
-    <div className="px-3 py-8">
+    <div className="px-4">
       <Greeting name={user.name} className="mb-6" />
       <ActivityList authorId={user.id} />
       <WIPActivity authorId={user.id} />
