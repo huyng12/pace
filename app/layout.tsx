@@ -37,7 +37,9 @@ export default function RootLayout(props: RootLayoutProps) {
       lang="en"
       className={clsx(fontSans.variable, "font-sans text-base antialiased")}
     >
-      <body className="mx-auto flex max-w-xl flex-col">{props.children}</body>
+      <body className="bg-carrot-50 text-gourd-950 mx-auto flex max-w-xl flex-col">
+        {props.children}
+      </body>
     </html>
   );
 }

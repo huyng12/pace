@@ -14,7 +14,7 @@ function AvatarLink({ user, width, height }: AvatarLinkProps) {
   return (
     <Link
       href={`/u/${user.username}`}
-      className="block rounded-xl transition hover:bg-neutral-200"
+      className="hover:bg-carrot-100 block rounded-xl transition"
     >
       <Avatar
         src={user.avatarUrl!}
@@ -23,7 +23,7 @@ function AvatarLink({ user, width, height }: AvatarLinkProps) {
         height={height}
         className="rounded-lg"
       />
-      <p className="text-center text-xl">{user.name}</p>
+      <p className="mt-2 text-center text-xl">{user.name}</p>
     </Link>
   );
 }

@@ -20,7 +20,7 @@ function StopActivity({ activityLogId }: StopActivityProps) {
       className="flex h-10 w-10 items-center justify-center rounded-full bg-red-400 ring-4 ring-red-200 hover:bg-red-500"
       onClick={handleStopActivityLog}
     >
-      <StopSolid className="text-2xl text-white" />
+      <StopSolid className="text-carrot-50 text-2xl" />
     </button>
   );
 }

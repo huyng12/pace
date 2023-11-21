@@ -59,11 +59,12 @@ function ActivityItem({ activity }: ActivityItemProps) {
 
   return (
     <div
-      className="ring-primary flex w-full cursor-pointer flex-col rounded-lg px-4 py-2 shadow ring-1 transition hover:bg-neutral-50"
+      // TODO: Background is using color which is not in predefined colors
+      className="ring-primary ring-gourd-900 hover:bg-carrot-100 flex w-full cursor-pointer flex-col rounded-lg bg-[#FFFFF4] px-4 py-2 shadow ring-2 transition"
       onClick={handleStartActivity}
     >
       <div className="flex justify-between gap-4">
-        <p className="grow truncate">{formattedActivity.title}</p>
+        <p className="grow truncate font-medium">{formattedActivity.title}</p>
         <p className="shrink-0">{formattedActivity.totalDuration.text}</p>
       </div>
       <div className="flex items-center justify-between gap-2">

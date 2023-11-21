@@ -13,7 +13,7 @@ async function Home() {
   return (
     // TODO: Fix padding-top to another number that makes more sense
     <div className="inset-x-1/2 mx-auto w-[250px] pt-[200px]">
-      <p className="mb-4 text-2xl font-medium">Who are you?</p>
+      <p className="mb-4 text-2xl font-medium">You are...</p>
       <div className="flex justify-between">
         {users.map((user) => (
           <AvatarLink key={user.id} user={user} width={100} height={100} />
