@@ -5,9 +5,11 @@
   "scripts": {
     "postinstall": "prisma generate",
     "dev": "next dev",
+    "dev:clean": "npm run purge-cache && npm run dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "purge-cache": "rm -rf .next"
   },
   "dependencies": {
     "@prisma/client": "^5.6.0",
